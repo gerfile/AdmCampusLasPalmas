@@ -8,19 +8,19 @@ const MENSAJE = "Hola, necesito ayuda urgente en el campus LAS PALMAS , En el au
 
 const CONTACTOS = [
   {
-    nombre: "German F Ayaviri Negrete", rol: "Mantenimiento audiovisual", numero: "59174772841",
+    nombre: "German F. Ayaviri Negrete", rol: "Mantenimiento audiovisual", numero: "59174772841",
     horarios: [
       { dias: [1, 2, 3, 4, 5], desde: "07:00", hasta: "15:00" }
     ]
   },
   {
-    nombre: "Roger Leonel Chui Calle", rol: "Mantenimiento audiovisual", numero: "59177105077",
+    nombre: "Roger L. Chui Calle", rol: "Mantenimiento audiovisual", numero: "59177105077",
     horarios: [
       { dias: [1, 2, 3, 4, 5], desde: "15:00", hasta: "23:00" }
     ]
   },
   {
-    nombre: "Henry E Cordero Balcazar", rol: "Apertura y cierre de aulas", numero: "59172916085",
+    nombre: "Henry E. Cordero Balcazar", rol: "Apertura y cierre de aulas", numero: "59172916085",
     horarios: [
       { dias: [1, 2, 3, 4, 5], desde: "15:00", hasta: "23:00" }
     ]
@@ -33,7 +33,7 @@ const CONTACTOS = [
     ]
   },
   {
-    nombre: "Lubdin S Galier Coronel", rol: "Apertura y cierre de aulas", numero: "59167097818",
+    nombre: "Lubdin S. Gallier Coronel", rol: "Apertura y cierre de aulas", numero: "59167097818",
     horarios: [
       { dias: [1, 2, 3, 4, 5], desde: "07:00", hasta: "15:00" }
      

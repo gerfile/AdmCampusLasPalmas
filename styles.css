@@ -1,0 +1,227 @@
+:root {
+  --bg: #f3f5f9;
+  --card: rgba(255, 255, 255, .92);
+  --text: #14213d;
+  --muted: #5b667a;
+  --accent: #128c7e;
+  --accent-dark: #0b6b5f;
+  --border: #d9dfe8;
+  --warn: #c0392b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1420;
+    --card: rgba(24, 32, 47, .94);
+    --text: #eef2f8;
+    --muted: #9aa6ba;
+    --accent: #25d366;
+    --accent-dark: #1da851;
+    --border: #2b3648;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Fondo: foto de la U (foto de la U desde Google Drive) con filtro azulado oscuro */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #0a1a33;
+  background-image:
+    url("https://drive.google.com/thumbnail?id=1M9FQrkyiurGOTLweTR3NAY4lOiCASP7u&sz=w1920"),
+    linear-gradient(160deg, #0b2a4a, #14213d);
+  background-size: cover;
+  background-position: center;
+}
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Ajusta aquí la intensidad: sube/baja los últimos números (opacidad) */
+  background:
+    linear-gradient(180deg, rgba(8, 24, 52, .78), rgba(6, 18, 40, .88)),
+    rgba(20, 70, 140, .25);
+  mix-blend-mode: normal;
+}
+
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+/* Escudos de la U en las esquinas superiores */
+.escudos {
+  position: absolute;
+  top: calc(env(safe-area-inset-top, 0px) + 14px);
+  left: 0;
+  right: 0;
+  padding: 0 clamp(12px, 3vw, 32px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+}
+.escudo {
+  width: clamp(56px, 9vw, 120px);
+  height: auto;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, .45));
+}
+
+header {
+  text-align: center;
+  color: #fff;
+  padding: 12px 0 18px;
+}
+header h1 { font-size: clamp(19px, 5vw, 24px); margin: 4px 0; }
+header p { margin: 0; font-size: 14px; opacity: .9; }
+
+.logo {
+  width: 50%;
+  max-width: 120px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.1;
+  color: #fff;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, .45));
+}
+.logo img { width: 100%; height: auto; display: block; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 14px;
+  backdrop-filter: blur(6px);
+}
+
+.label {
+  margin: 0 0 4px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.clock { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.person:first-child { border-top: 0; }
+.avatar {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info { flex: 1; min-width: 0; }
+.name { font-weight: 700; }
+.role, .hours { font-size: 13px; color: var(--muted); }
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--accent-dark); }
+
+.empty { color: var(--warn); font-weight: 600; }
+
+details summary { cursor: pointer; font-weight: 700; }
+#sched h3 { margin: 14px 0 4px; font-size: 14px; }
+#sched p { margin: 6px 0 0; }
+.badge {
+  font-size: 11px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.qr { text-align: center; }
+#qrbox {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 12px;
+}
+#qrbox[hidden] { display: none; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  opacity: .8;
+}
+
+/* ===== Responsivo ===== */
+/* Celulares y pantallas angostas: los escudos quedan arriba y el contenido baja */
+@media (max-width: 640px) {
+  .wrap { padding-top: 84px; }
+  .logo { max-width: 190px; }
+}
+
+/* Celulares muy pequeños: el botón pasa debajo del nombre */
+@media (max-width: 380px) {
+  .person { flex-wrap: wrap; }
+  .person .btn { width: 100%; text-align: center; }
+  .card { padding: 14px; }
+}
+
+/* Pantallas grandes: más aire y logo un poco mayor */
+@media (min-width: 900px) {
+  .wrap { padding-top: 40px; max-width: 560px; }
+  .logo { max-width: 260px; }
+}
+
+/* Celular en horizontal (poca altura) */
+@media (max-height: 480px) and (orientation: landscape) {
+  .wrap { padding-top: 24px; }
+  .escudo { width: 48px; }
+}

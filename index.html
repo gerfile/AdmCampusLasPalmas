@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contactos de emergencia · ADM Campus</title>
+  <meta name="description" content="Contactos de emergencia de WhatsApp según horario - ADM Campus, UAP">
+  <meta name="theme-color" content="#0b3d2e">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <!-- Escudos de la U: color a la izquierda, blanco a la derecha -->
+  <div class="escudos">
+    <img class="escudo" src="https://drive.google.com/thumbnail?id=1wrsSG5AO9tCZ600iHbx05YKHmcE4TkKW&sz=w400" alt="Universidad Amazónica de Pando" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">
+    <img class="escudo" src="https://drive.google.com/thumbnail?id=1-x6rONdpgQxiqQK7rJFmEVmY-eY9Ynx5&sz=w400" alt="" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">
+  </div>
+
+  <main class="wrap">
+    <header>
+      <div class="logo" id="logo">
+        <img src="https://drive.google.com/thumbnail?id=1Yu902PSTHhkikBVGEmpAjIWRFu8-Zb3i&sz=w600" referrerpolicy="no-referrer" alt="ADM Campus" id="logo-img">
+      </div>
+      <h1>Contactos de emergencia</h1>
+      <p>Universidad Amazónica de Pando</p>
+    </header>
+
+    <section class="card">
+      <h2 class="label">De turno ahora</h2>
+      <div class="clock" id="clock"></div>
+      <div id="onduty"></div>
+    </section>
+
+    <section class="card">
+      <details>
+        <summary>Ver todos los horarios</summary>
+        <div id="sched"></div>
+      </details>
+    </section>
+
+    <!-- <section class="card qr">
+      <button class="btn-outline" id="qrbtn" type="button">Mostrar código QR de esta página</button>
+      <div id="qrbox" hidden></div>
+    </section> -->
+
+    <footer>ADM Campus · Mantenimiento audiovisual y apertura y cierre de aulas</footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="contactos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

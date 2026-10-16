@@ -1,0 +1,4 @@
+Coloca aqui tus imagenes con estos nombres exactos:
+  logo.png   -> logo de ADM Campus (idealmente cuadrado o redondo, fondo transparente)
+  fondo.jpg  -> foto de la universidad (idealmente vertical o grande, menos de 500 KB)
+Si no estan, la pagina muestra un texto y un degradado como respaldo.
